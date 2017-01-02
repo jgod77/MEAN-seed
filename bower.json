@@ -1,11 +1,11 @@
 {
-  "name" : "MEAN-seed",
+  "name": "MEAN-seed",
   "version": "1.0.0",
   "dependencies": {
-    "bootstrap" : "latest",
-    "font-awesome" : "latest",
-    "animate.css" : "latest",
-    "angular" : "latest",
-    "angular-route" : "latest"
+    "angular": "latest",
+    "angular-route": "latest",
+    "animate.css": "latest",
+    "bootstrap": "latest",
+    "font-awesome": "latest"
   }
 }

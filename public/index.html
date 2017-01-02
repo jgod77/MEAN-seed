@@ -2,18 +2,43 @@
 <html lang="en">
 <head>
 
+  <base href="/">
+
   <title>MEAN seed</title>
 
+  <link rel="stylesheet" href="./libs/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+
+  <script src="libs/angular/angular.min.js"></script>
+  <script src="libs/angular-route/angular-route.min.js"></script>
+
+  <script src="./main/main.controller.js"></script>
+  <script src="./view1/view1.controller.js"></script>
+  <script src="./services/view1.service.js"></script>
+  <script src="./view2/view2.controller.js"></script>  
+  <script src="./app-routes.js"></script>
+  <script src="./app.js"></script>
 </head>
-<body>
-  
+<body ng-app="seedApp">
 
 
+  <div class="container">
 
-  yay
+    <nav class="navbar navbar-inverse">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">MEAN seed</a>
+      </div>
+
+      <ul class="nav navbar-nav">
+        <li><a href="/view1">View 1</a></li>
+        <li><a href="/view2">View 2</a></li>
+      </ul>
+    </nav>
+
+    <div ng-view></div>
 
 
-
+  </div>
 
 
 
