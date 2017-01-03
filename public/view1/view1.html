@@ -5,4 +5,8 @@
     <input type="text" ng-model="thing.name">
     <input type="submit" ng-click="vm.input(thing)">
   </form>
+
+  <div ng-repeat="thing in vm.list">
+    {{thing.name}}
+  </div>
 </div>

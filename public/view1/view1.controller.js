@@ -1,13 +1,30 @@
 angular.module('View1Ctrl', [])
-  .controller('View1Controller', function($scope) {
+  .controller('View1Controller', function($scope, View1) {
+
+    function init() {
+      getThings();
+    }
+
+    function getThings() {
+      View1.get()
+        .then(function(res) {
+        res.data.forEach(function(ele){
+          list.push(ele);
+        });
+      });
+    }
 
     var info = 'View 1';
+    var list = [];    
     var input = function(input) {
-      console.log('input', input)
+      View1.post(input);
     };
+    
 
     angular.extend(this, {
       info : info,
-      input : input
+      input : input,
+      list : list
     });
+    init();
   });
