@@ -1,10 +1,9 @@
 angular.module('MainCtrl', [])
   .controller('MainController', function($scope) {
-    var vm = this;
 
+    var info = 'Home Page';
 
-    vm.info = 'Home Page';
-
-
-    return vm;
+    angular.extend(this, {
+      info : info
+    });
   });

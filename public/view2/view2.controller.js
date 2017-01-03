@@ -1,10 +1,9 @@
 angular.module('View2Ctrl', [])
   .controller('View2Controller', function($scope) {
-    var vm = this;
 
+    var info = 'View 2';
 
-    vm.info = 'View 2';
-
-
-    return vm;
+    angular.extend(this, {
+      info : info,
+    });
   });
