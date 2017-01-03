@@ -1,6 +1,10 @@
 angular.module('MainCtrl', [])
   .controller('MainController', function($scope) {
+    var vm = this;
 
-    $scope.info = 'Home page';
 
+    vm.info = 'Home Page';
+
+
+    return vm;
   });
