@@ -17,7 +17,10 @@ angular.module('View1Ctrl', [])
     var info = 'View 1';
     var list = [];    
     var input = function(input) {
-      View1.post(input);
+      View1.post(input)
+        .then(function(res) {
+          list.push(res.data);
+        });
     };
     var removeThing = function(id, index) {
       list.splice(index, 1);
