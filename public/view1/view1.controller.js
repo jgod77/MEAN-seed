@@ -19,12 +19,16 @@ angular.module('View1Ctrl', [])
     var input = function(input) {
       View1.post(input);
     };
+    var removeThing = function(id) {
+      View1.delete(id);
+    };
     
 
     angular.extend(this, {
       info : info,
       input : input,
-      list : list
+      list : list,
+      removeThing : removeThing
     });
     init();
   });

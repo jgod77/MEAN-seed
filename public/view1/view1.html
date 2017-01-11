@@ -8,5 +8,6 @@
 
   <div ng-repeat="thing in vm.list">
     {{thing.name}}
+    <span class="thing-delete" ng-click="vm.removeThing(thing._id)">X</span>
   </div>
 </div>

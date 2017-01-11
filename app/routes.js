@@ -17,8 +17,8 @@ var Thing = require('./models/thing');
 
     //Post
     app.post('/api/things', function(req, res) {
-      var thing = new Thing(req.body);
-      thing.save()
+      var Thing = new Thing(req.body);
+      Thing.save()
         .then(function(err, thing) {
           if (err) {
             //error
@@ -26,6 +26,20 @@ var Thing = require('./models/thing');
 
           res.sendStatus(201);
         });
+    });
+
+    //Delete
+    app.delete('/api/things/:id', function(req, res) {
+      Thing.remove({
+        _id: req.params.id
+      })
+        .then(function(err, thing) {
+          if (err) {
+            //error
+          }
+
+          res.json({ message: 'Successfully deleted' });
+      });
     });
 
 

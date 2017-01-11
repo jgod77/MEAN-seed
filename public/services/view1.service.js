@@ -12,7 +12,7 @@ angular.module('View1Service', [])
       },
 
       delete : function(id) {
-        return $http.delete('/api/things' + id);
+        return $http.delete('/api/things/' + id);
       }
 
     };
