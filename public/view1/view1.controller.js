@@ -8,10 +8,10 @@ angular.module('View1Ctrl', [])
     function getThings() {
       View1.get()
         .then(function(res) {
-        res.data.forEach(function(ele){
-          list.push(ele);
+          res.data.forEach(function(ele){
+            list.push(ele);
+          });
         });
-      });
     }
 
     var info = 'View 1';
@@ -19,7 +19,8 @@ angular.module('View1Ctrl', [])
     var input = function(input) {
       View1.post(input);
     };
-    var removeThing = function(id) {
+    var removeThing = function(id, index) {
+      list.splice(index, 1);
       View1.delete(id);
     };
     
