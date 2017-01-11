@@ -17,8 +17,8 @@ var Thing = require('./models/thing');
 
     //Post
     app.post('/api/things', function(req, res) {
-      var Thing = new Thing(req.body);
-      Thing.save()
+      var thing = new Thing(req.body);
+      thing.save()
         .then(function(err, thing) {
           if (err) {
             //error
