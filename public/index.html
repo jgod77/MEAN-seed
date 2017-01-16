@@ -15,9 +15,12 @@
   <script src="./main/main.controller.js"></script>
   <script src="./view1/view1.controller.js"></script>
   <script src="./services/view1.service.js"></script>
-  <script src="./view2/view2.controller.js"></script>  
+  <script src="./view2/view2.controller.js"></script>
+  <script src="./loginModal/loginModal.controller.js"></script>
+  <script src="./loginModal/loginModal.component.js"></script>
   <script src="./app-routes.js"></script>
   <script src="./app.js"></script>
+  
 </head>
 <body ng-app="seedApp">
 
@@ -36,8 +39,7 @@
     </nav>
 
     <div ng-view></div>
-
-
+    <login-modal></login-modal>
   </div>
 
 

@@ -1,0 +1,45 @@
+<div class="modal-container" ng-controller="ModalController as vm" ng-show="vm.modalOpen">
+
+
+  <div class="modal">
+
+    <!--header-->
+    <div class="modal-header">
+      <div class="modal-close" ng-click="vm.toggleModal()">
+        X
+      </div>
+    </div>
+
+
+    <!--singin / singup buttons-->
+    <div class="modal-selector" id="signin" ng-click="vm.selectSignIn()">
+      <span class="modal-selector-text">Sign In</span>
+      <hr>
+    </div>
+    <div class="modal-selector" id="signup" ng-click="vm.selectSignUp()">
+      <span class="modal-selector-text">Sign Up</span>
+    </div>
+
+
+    <!--inputs-->
+    <form action="">
+      <div class="modal-input-container" id="email">
+        <label for="emailInput">E-Mail Address</label><input type="text" id="emailInput" ng-model="vm.login.email" ng-focus="vm.focusInput('email')" ng-blur="vm.blurInput('email')">
+      </div>
+
+      <div class="modal-input-container" id="password">
+        <label for="passwordInput">Password</label><input type="password" id="passwordInput" ng-model="vm.login.password" ng-focus="vm.focusInput('password')" ng-blur="vm.blurInput('password')">
+      </div>
+
+      <div class="modal-input-container" ng-show="signup" id="passwordConfirm">
+        <label for="passwordConfirmInput">Confirm Password</label><input type="password" id="passwordConfirmInput" ng-model="vm.login.passwordConfirm" ng-focus="vm.focusInput('passwordConfirm')" ng-blur="vm.blurInput('passwordConfirm')">
+      </div>
+
+      <input type="submit" value="Sign In" class="btn" ng-show="!signup">
+      <input type="submit" value="Sign Up" class="btn" ng-show="signup">
+    </form>
+
+  </div>
+
+
+</div>
