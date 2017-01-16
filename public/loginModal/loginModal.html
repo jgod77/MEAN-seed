@@ -1,9 +1,15 @@
-<div class="modal-container" ng-controller="ModalController as vm" ng-show="vm.modalOpen" ng-click="vm.toggleModal()">
+<div  ng-controller="ModalController as vm" ng-show="vm.modalOpen">
+
+  <!--Opaque Background-->
+  <div class="modal-container" ng-click="vm.toggleModal(); $event.stopPropagation();">
+
+  </div>
 
 
+  <!--Modal-->
   <div class="modal">
 
-    <!--header-->
+    <!--Header-->
     <div class="modal-header">
       <div class="modal-close" ng-click="vm.toggleModal()">
         X
@@ -11,7 +17,7 @@
     </div>
 
 
-    <!--singin / singup buttons-->
+    <!--Singin / Singup Buttons-->
     <div class="modal-selector" id="signin" ng-click="vm.selectSignIn()">
       <span class="modal-selector-text">Sign In</span>
       <hr>
@@ -21,7 +27,7 @@
     </div>
 
 
-    <!--inputs-->
+    <!--Inputs-->
     <form action="">
       <div class="modal-input-container" id="email">
         <label for="emailInput">E-Mail Address</label><input type="text" id="emailInput" ng-model="vm.login.email" ng-focus="vm.focusInput('email')" ng-blur="vm.blurInput('email')">
@@ -39,6 +45,7 @@
       <input type="submit" value="Sign Up" class="btn" ng-show="signup">
     </form>
 
+  <!--End Modal-->
   </div>
 
 
