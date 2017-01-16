@@ -6,7 +6,6 @@ angular.module('ModalCtrl', [])
     var modalOpen = true;
     var toggleModal = function() {
       this.modalOpen = !this.modalOpen;
-      console.log(this.modalOpen)
     };
 
 
