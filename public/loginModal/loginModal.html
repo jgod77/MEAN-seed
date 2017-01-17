@@ -49,9 +49,9 @@
       </div>
 
       <!--Confirm Password if signup-->
-      <div class="modal-input-container" ng-show="signup" id="passwordConfirm" ng-class="{valid: login.passwordConfirmInput.$dirty && vm.Login.user.password === vm.Login.user.passwordConfirm, invalid: vm.Login.user.passwordConfirm.length > 0 && vm.Login.user.password !== vm.Login.user.passwordConfirm}">
+      <div class="modal-input-container" ng-show="signup" id="passwordConfirm" ng-class="{valid: vm.Login.validPassword && login.passwordConfirmInput1.$dirty && vm.Login.user.password === vm.Login.user.passwordConfirm, invalid: vm.Login.user.passwordConfirm.length > 0 && vm.Login.user.password !== vm.Login.user.passwordConfirm}">
         <label for="passwordConfirmInput">Confirm Password</label>
-        <input type="password" name="passwordConfirmInput" id="passwordConfirmInput" ng-model="vm.Login.user.passwordConfirm" ng-focus="vm.focusInput('passwordConfirm')" ng-blur="vm.blurInput('passwordConfirm')">
+        <input type="password" name="passwordConfirmInput1" id="passwordConfirmInput" ng-model="vm.Login.user.passwordConfirm" ng-focus="vm.focusInput('passwordConfirm')" ng-blur="vm.blurInput('passwordConfirm')">
       </div>
 
       
