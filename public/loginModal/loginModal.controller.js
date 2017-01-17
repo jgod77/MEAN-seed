@@ -16,42 +16,31 @@ angular.module('ModalCtrl', [])
     };
 
 
-    var login = {
-      email : '',
-      password : '',
-      passwordConfirm : '',
-    };
 
     var focusInput = function(input) {
       if (input === 'email') {
-        this.email = 'E-Mail Address';
         angular.element($document[0].querySelector('#email'))
           .addClass('input-selected');
       }
       if (input === 'password') {
-        this.password = 'Password';
         angular.element($document[0].querySelector('#password'))
           .addClass('input-selected');
       }
       if (input === 'passwordConfirm') {
-        this.passwordConfirm = 'Confirm Password';
         angular.element($document[0].querySelector('#passwordConfirm'))
           .addClass('input-selected');
       }
     };
     var blurInput = function(input) {
-      if (input === 'email' && this.login.email.length < 1) {
-        this.email = '';
+      if (input === 'email' && Login.user.email.length < 1) {
         angular.element($document[0].querySelector('#email'))
           .removeClass('input-selected');
       }
-      if (input === 'password' && this.login.password.length < 1) {
-        this.password = '';
+      if (input === 'password' && Login.user.password.length < 1) {
         angular.element($document[0].querySelector('#password'))
           .removeClass('input-selected');
       }
-      if (input === 'passwordConfirm' && this.login.passwordConfirm.length < 1) {
-        this.passwordConfirm = '';
+      if (input === 'passwordConfirm' && Login.user.passwordConfirm.length < 1) {
         angular.element($document[0].querySelector('#passwordConfirm'))
           .removeClass('input-selected');
       }
@@ -64,7 +53,6 @@ angular.module('ModalCtrl', [])
       email : email, 
       focusInput : focusInput,
       blurInput : blurInput,
-      login : login,
       Login : Login
     });
   });
