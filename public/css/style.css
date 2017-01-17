@@ -129,3 +129,23 @@
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px white inset;
 }
+
+.valid {
+  box-shadow: 0 0 10px lawngreen;
+}
+
+.invalid {
+  box-shadow: 0 0 10px orangered;
+}
+
+.email-validator {
+  z-index: 20;
+  position: absolute;
+  left: 75px;
+  color: orangered;
+  font-size: 12px;
+}
+
+.good {
+  color: lawngreen;
+}

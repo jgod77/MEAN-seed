@@ -15,7 +15,7 @@ angular.module('ModalCtrl', [])
         .removeClass('modal-selector-selected');
     };
 
-
+    
 
     var focusInput = function(input) {
       if (input === 'email') {

@@ -28,21 +28,36 @@
 
 
     <!--Inputs-->
-    <form action="">
-      <div class="modal-input-container" id="email">
-        <label for="emailInput">E-Mail Address</label><input type="text" id="emailInput" ng-model="vm.Login.user.email" ng-focus="vm.focusInput('email')" ng-blur="vm.blurInput('email')">
+    <form name="login" action="">
+      
+      <!--E-Mail-->
+      <div class="modal-input-container" id="email" ng-class="{valid: vm.Login.validEmail && login.emailInput.$dirty, invalid: !vm.Login.validEmail && vm.Login.user.email.length > 0}">
+        <label for="emailInput">E-Mail Address</label>
+        <input type="text" name="emailInput" id="emailInput" ng-model="vm.Login.user.email" ng-change="vm.Login.validateEmail()" ng-focus="vm.focusInput('email')" ng-blur="vm.blurInput('email')">
       </div>
 
-      <div class="modal-input-container" id="password">
-        <label for="passwordInput">Password</label><input type="password" id="passwordInput" ng-model="vm.Login.user.password" ng-focus="vm.focusInput('password')" ng-blur="vm.blurInput('password')">
+      <!--Password-->
+      <div class="modal-input-container" id="password" ng-class="{valid: vm.Login.validPassword && login.passwordInput.$dirty, invalid: !vm.Login.validPassword && vm.Login.user.password.length > 0}">
+        <!--if signup password reqs-->
+        <div class="email-validator" ng-show="signup && login.passwordInput.$dirty && vm.Login.user.password.length > 0">
+          <span ng-class="{good: vm.Login.password.abc}">abc </span>
+          <span ng-class="{good: vm.Login.password['123']}">123 </span>
+          <span ng-class="{good: vm.Login.password.special}">!@#$%&* </span>
+        </div>
+        <label for="passwordInput">Password</label>
+        <input type="password" name="passwordInput" id="passwordInput" ng-model="vm.Login.user.password" ng-change="vm.Login.validatePassword()" ng-focus="vm.focusInput('password')" ng-blur="vm.blurInput('password')">
       </div>
 
-      <div class="modal-input-container" ng-show="signup" id="passwordConfirm">
-        <label for="passwordConfirmInput">Confirm Password</label><input type="password" id="passwordConfirmInput" ng-model="vm.Login.user.passwordConfirm" ng-focus="vm.focusInput('passwordConfirm')" ng-blur="vm.blurInput('passwordConfirm')">
+      <!--Confirm Password if signup-->
+      <div class="modal-input-container" ng-show="signup" id="passwordConfirm" ng-class="{valid: login.passwordInput.$dirty && vm.Login.user.password === vm.Login.user.passwordConfirm, invalid: vm.Login.user.passwordConfirm.length > 0 && vm.Login.user.password !== vm.Login.user.passwordConfirm}">
+        <label for="passwordConfirmInput">Confirm Password</label>
+        <input type="password" id="passwordConfirmInput" ng-model="vm.Login.user.passwordConfirm" ng-focus="vm.focusInput('passwordConfirm')" ng-blur="vm.blurInput('passwordConfirm')">
       </div>
 
+      
       <input type="submit" value="Sign In" class="btn" ng-show="!signup">
       <input type="submit" value="Sign Up" class="btn" ng-show="signup">
+
     </form>
 
   <!--End Modal-->
