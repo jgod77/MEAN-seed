@@ -59,12 +59,13 @@
 }
 
 .modal-input-container input {
-  height: 62%;
+  height: 94%;
   width: 95%;
   position: absolute;
   bottom: 0;
   left: 3px;
   border: none;
+  padding-top: 12px;
 }
 
 .modal-input-container input:focus {
