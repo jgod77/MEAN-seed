@@ -1,12 +1,5 @@
 angular.module('ModalCtrl', [])
-  .controller('ModalController', function($scope, $document) {
-
-
-
-    var modalOpen = true;
-    var toggleModal = function() {
-      this.modalOpen = !this.modalOpen;
-    };
+  .controller('ModalController', function($scope, $document, Login) {
 
 
 
@@ -66,13 +59,12 @@ angular.module('ModalCtrl', [])
 
 
     angular.extend(this, {
-      toggleModal : toggleModal,
-      modalOpen : modalOpen,
       selectSignUp : selectSignUp,
       selectSignIn : selectSignIn,
       email : email, 
       focusInput : focusInput,
       blurInput : blurInput,
-      login : login
+      login : login,
+      Login : Login
     });
   });

@@ -1,7 +1,7 @@
-<div  ng-controller="ModalController as vm" ng-show="vm.modalOpen">
+<div  ng-controller="ModalController as vm" ng-show="vm.Login.modalOpen">
 
   <!--Opaque Background-->
-  <div class="modal-container" ng-click="vm.toggleModal(); $event.stopPropagation();">
+  <div class="modal-container" ng-click="vm.Login.toggleModal(); $event.stopPropagation();">
 
   </div>
 
@@ -11,7 +11,7 @@
 
     <!--Header-->
     <div class="modal-header">
-      <div class="modal-close" ng-click="vm.toggleModal()">
+      <div class="modal-close" ng-click="vm.Login.toggleModal()">
         X
       </div>
     </div>

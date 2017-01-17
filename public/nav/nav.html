@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse" ng-controller="NavBarController as vm">
   <div class="navbar-header">
     <a class="navbar-brand" href="/">MEAN seed</a>
   </div>
@@ -7,4 +7,6 @@
     <li><a href="/view1">View 1</a></li>
     <li><a href="/view2">View 2</a></li>
   </ul>
+  <button ng-click="vm.Login.toggleModal()">Login Modal</button>
+
 </nav>

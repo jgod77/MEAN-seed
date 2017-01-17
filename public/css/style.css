@@ -73,7 +73,6 @@
 
 .modal-selector hr {
   border: none;
-  /*background: linear-gradient(to bottom, #ffffff 0%,#2989d8 74%,#7db9e8 100%);*/
   background: linear-gradient(to bottom, #ffffff 0%,#2989d8 70%,#7db9e8 100%);
   position: absolute;
   top: 62px;

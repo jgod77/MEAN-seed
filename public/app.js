@@ -8,5 +8,6 @@ angular.module('seedApp', [
   'ModalCtrl', 
   'LoginModal',
   'NavBarCtrl',
-  'NavBar'
+  'NavBar',
+  'LoginService'
   ]);
