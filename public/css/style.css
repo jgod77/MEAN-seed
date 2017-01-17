@@ -31,6 +31,7 @@
   left: 270px;
   box-shadow: 0 0 5px darkgray;
   text-align: center;
+  cursor: pointer;
 }
 
 .modal-selector {
@@ -40,6 +41,7 @@
   display: inline-block;
   background-color: white;
   margin-bottom: 20px;
+  cursor: pointer;
 }
 
 .modal-selector-text {
