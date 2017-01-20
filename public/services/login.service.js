@@ -24,6 +24,20 @@ angular.module('LoginService', [])
 
     return {
 
+      //post user
+      post : function() {
+        if(validEmail && validPassword) {
+          return $http.post('/api/register', this.user);
+        }
+      },
+
+      //check user
+      signIn : function() {
+        if(validEmail && validPassword) {
+          return $http.post('/api/authenticate', this.user);
+        }
+      },
+
       validateEmail : function() {
         this.validEmail = emailValidation.test(this.user.email);
       },
@@ -37,6 +51,15 @@ angular.module('LoginService', [])
 
       toggleModal : function() {
         this.modalOpen = !this.modalOpen;
+        console.log(this.modalOpen)
+        if(this.modalOpen) {
+          this.user = {
+            email : '',
+            password : '',
+            passwordConfirm : '',
+          };
+          //remove slected class from input
+        }
       },
 
       modalOpen : modalOpen,

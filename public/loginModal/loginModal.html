@@ -55,8 +55,8 @@
       </div>
 
       
-      <input type="submit" value="Sign In" class="btn" ng-show="!signup">
-      <input type="submit" value="Sign Up" class="btn" ng-show="signup">
+      <input type="button" value="Sign In" ng-click="vm.Login.signIn()" class="btn" ng-show="!signup">
+      <input type="button" value="Sign Up" ng-click="vm.Login.post()" class="btn" ng-show="signup">
 
     </form>
 
