@@ -51,7 +51,6 @@ angular.module('LoginService', [])
 
       toggleModal : function() {
         this.modalOpen = !this.modalOpen;
-        console.log(this.modalOpen)
         if(this.modalOpen) {
           this.user = {
             email : '',
