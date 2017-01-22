@@ -26,24 +26,14 @@ gulp.task('watch', function() {
 
 
 gulp.task('js', function () {
-  gulp.src(['./public/**/*.js', '!public/libs/**', '!public/app.js', '!public/app-routes.js'])
+  gulp.src(['./public/app.js', './public/**/*.js'])
     .pipe(sourcemaps.init())
-      .pipe(concat('app.js'))
+      .pipe(concat('scripts.js'))
       .pipe(ngAnnotate())
       .pipe(ngmin())
       .pipe(uglify())
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('dist'));
-
-    gulp.src(['./public/app.js', './public/app-routes.js'])
-    .pipe(sourcemaps.init())
-      .pipe(ngAnnotate())
-      .pipe(ngmin())
-      .pipe(uglify())
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest('dist'))
 });
 
 gulp.task('build', ['js', 'html']);
-
-//  =-=-=-=-=-   './dist/minSafe/**/*.js'
