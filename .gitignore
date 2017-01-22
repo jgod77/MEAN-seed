@@ -5,3 +5,7 @@ yarn.lock
 public/libs
 
 .log
+
+dist/
+
+minSafe/
