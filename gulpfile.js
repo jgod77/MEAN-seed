@@ -6,6 +6,7 @@ var sourcemaps = require('gulp-sourcemaps');
 var ngAnnotate = require('gulp-ng-annotate');
 var ngmin = require('gulp-ngmin');
 
+gulp.task('build', ['js', 'html']);
 
 gulp.task('sass', function() {
   gulp.src('./styles/main.scss')
@@ -19,12 +20,6 @@ gulp.task('html', function() {
     .pipe(gulp.dest('dist'))
 });
 
-gulp.task('watch', function() {
-    gulp.watch('./public/**/*.js', ['js']);
-    gulp.watch('./styles/main.scss', ['sass']);
-});
-
-
 gulp.task('js', function () {
   gulp.src(['./public/app.js', './public/**/*.js'])
     .pipe(sourcemaps.init())
@@ -36,4 +31,8 @@ gulp.task('js', function () {
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('build', ['js', 'html']);
+gulp.task('watch', function() {
+    gulp.watch('./public/**/*.js', ['js']);
+    gulp.watch('./public/css/main.scss', ['sass']);
+    gulp.watch('./public/**/*.html', ['html']);
+});
