@@ -73,12 +73,8 @@ var Thing = require('./models/thing');
     app.post('/api/things', function(req, res) {
       var thing = new Thing(req.body);
       thing.save()
-        .then(function(err) {
-          if (err) {
-            //error
-          }
-          // res.json(thing)
-          res.sendStatus(201);
+        .then(function(newThing) {
+          res.status(201).json(newThing);
         });
     });
 
