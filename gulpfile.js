@@ -6,18 +6,21 @@ var sourcemaps = require('gulp-sourcemaps');
 var ngAnnotate = require('gulp-ng-annotate');
 var ngmin = require('gulp-ngmin');
 
-gulp.task('build', ['js', 'html']);
+gulp.task('css', function() {
+  gulp.src('./public/css/style.css')
+    .pipe(gulp.dest('dist/css'));
+});
 
 gulp.task('sass', function() {
   gulp.src('./styles/main.scss')
     .pipe(sass({style: 'expanded'}))
-      .on('error', gutil.log)
-    .pipe(gulp.dest('dist'))
+      // .on('error', gutil.log)
+    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('html', function() {
   gulp.src(['./public/**/*.html', '!public/libs/**'])  
-    .pipe(gulp.dest('dist'))
+    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('js', function () {
@@ -34,5 +37,8 @@ gulp.task('js', function () {
 gulp.task('watch', function() {
     gulp.watch('./public/**/*.js', ['js']);
     gulp.watch('./public/css/main.scss', ['sass']);
+    gulp.watch('./public/css/main.css', ['css']);
     gulp.watch('./public/**/*.html', ['html']);
 });
+
+gulp.task('build', ['js', 'html', 'css', 'sass']);
