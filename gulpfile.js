@@ -13,7 +13,8 @@ var proxyMiddleware = require('http-proxy-middleware');
 
 gulp.task('css', function() {
   gulp.src('./public/css/style.css')
-    .pipe(gulp.dest('dist/css'));
+    .pipe(gulp.dest('dist/css'))
+    .pipe(browserSync.reload({stream: true}));    
 });
 
 
@@ -21,7 +22,8 @@ gulp.task('sass', function() {
   gulp.src('./styles/main.scss')
     .pipe(sass({style: 'expanded'}))
       // .on('error', gutil.log)
-    .pipe(gulp.dest('dist'));
+    .pipe(gulp.dest('dist'))
+    .pipe(browserSync.reload({stream: true}));
 });
 
 
@@ -40,7 +42,8 @@ gulp.task('js', function () {
       .pipe(ngmin())
       .pipe(uglify())
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('dist'));
+    .pipe(gulp.dest('dist'))
+    .pipe(browserSync.reload({stream: true}));    
 });
 
 
